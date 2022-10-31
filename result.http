@@ -13,7 +13,7 @@ GET http://localhost:3000/todos/?search_q=Play
 
 
 ###API-2
-GET http://localhost:3000/todos/2/
+GET http://localhost:3000/todos/1/
 
 ###API-3
 POST http://localhost:3000/todos/
@@ -55,5 +55,4 @@ Content-Type: application/json
 
 ### DELETE 
 DELETE http://localhost:3000/todos/4/ 
-
 
