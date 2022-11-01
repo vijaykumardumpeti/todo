@@ -143,7 +143,7 @@ app.put("/todos/:todoId/", async (request, response) => {
     SET 
     status = '${status}'
     WHERE 
-    todoId = '${todoId}';`;
+    id = '${todoId}';`;
 
     column = "Status";
   }
@@ -154,7 +154,7 @@ app.put("/todos/:todoId/", async (request, response) => {
     SET 
     priority = '${priority}'
     WHERE 
-    todoId = '${todoId}';`;
+    id = '${todoId}';`;
 
     column = "Priority";
   }
@@ -165,7 +165,7 @@ app.put("/todos/:todoId/", async (request, response) => {
     SET 
     todo = '${todo}'
     WHERE 
-    todoId = '${todoId}';`;
+    id = '${todoId}';`;
 
     column = "Todo";
   }
