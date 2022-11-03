@@ -45,7 +45,7 @@ app.get("/todos/", async (request, response) => {
   let sqlQuery = "";
 
   switch (true) {
-    case hasPriorityAndStatusProperties:
+    case hasPriorityAndStatusProperties(request.query):
       sqlQuery = `
                 SELECT 
                 *
@@ -57,7 +57,7 @@ app.get("/todos/", async (request, response) => {
                     status = '${status}';`;
       break;
 
-    case hasPriorityProperty:
+    case hasPriorityProperty(request.query):
       sqlQuery = `
                 SELECT 
                 *
@@ -67,7 +67,7 @@ app.get("/todos/", async (request, response) => {
                     priority = '${priority}';`;
       break;
 
-    case hasStatusProperty:
+    case hasStatusProperty(request.query):
       sqlQuery = `
                SELECT 
                 *
@@ -89,6 +89,7 @@ app.get("/todos/", async (request, response) => {
   }
 
   data = await db.all(sqlQuery);
+  console.log(data);
   response.send(data);
 });
 
@@ -190,4 +191,5 @@ app.delete("/todos/:todoId/", async (request, response) => {
     console.log(`DB Error: ${e.message}`);
   }
 });
+
 
