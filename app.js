@@ -84,7 +84,7 @@ app.get("/todos/", async (request, response) => {
                 FROM 
                     todo
                 WHERE
-                    todo LIKE '${search_q}';`;
+                    todo LIKE '%${search_q}%';`;
       break;
   }
 
